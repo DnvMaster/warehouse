@@ -8,7 +8,7 @@
                 <div class="lonyo-cta-thumb" data-aos="fade-up" data-aos-duration="500">
                     <img id="appImage" src="{{ asset($apps->image) }}" alt="" style="cursor: pointer; width:100%; max-width:300px;">
                     @if(auth()->check())
-                        <input type="file" id="uploadImage" style="display: none;">
+                        <input type="file" id="uploadImage">
                     @endif
                 </div>
             </div>
@@ -80,9 +80,11 @@
         formData.append("_token", document.querySelector('meta[name="csrf-token"]').getAttribute("content"));
 
         fetch("/update-app-image/1",{
-            method: "POST", body: formData
-        }).then(response => response.json())
-          .then(data => {
+            method: "POST", 
+            body: formData
+        })
+        .then(response => response.json())
+        .then(data => {
             if(data.success) {
                 imageElement.src = data.image_url;
                 console.log('Шзображение обновлено успешно');
