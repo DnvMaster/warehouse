@@ -9,6 +9,7 @@ use App\Http\Controllers\Backend\HomeController;
 use App\Http\Controllers\Backend\ClarifiesController;
 use App\Http\Controllers\Backend\UsabilityController;
 use App\Http\Controllers\Backend\FaqController;
+use App\Http\Controllers\Backend\AppController;
 
 Route::get('/', function () {
     return view('home.index');
@@ -94,5 +95,11 @@ Route::middleware('auth')->group(function()
         Route::get('/edit/faqs/{id}', 'editFaqs')->name('edit.faqs');
         Route::post('/update/faqs', 'updateFaqs')->name('update.faqs');
         Route::get('/delete/faqs/{id}', 'deleteFaqs')->name('delete.faqs');
+    });
+
+    Route::controller(AppController::class)->group(function()
+    {
+        Route::post('/update-app/{id}','updateApps');
+        Route::post('/update-app-image/{id}','updateAppsImage');
     });
 });
