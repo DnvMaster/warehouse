@@ -1,1 +1,0 @@
-<?php echo "<h3>WareHouse Inventory Control system Part-2</h3>";
