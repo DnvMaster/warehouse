@@ -10,6 +10,7 @@ use App\Http\Controllers\Backend\ClarifiesController;
 use App\Http\Controllers\Backend\UsabilityController;
 use App\Http\Controllers\Backend\FaqController;
 use App\Http\Controllers\Backend\AppController;
+use App\Http\Controllers\FrontendController;
 
 Route::get('/', function () {
     return view('home.index');
@@ -103,3 +104,5 @@ Route::middleware('auth')->group(function()
         Route::post('/update-app-image/{id}','updateAppsImage');
     });
 });
+
+Route::get('/team',[FrontendController::class,'ourTeam'])->name('our.team');

@@ -12,11 +12,11 @@
         <div class="lonyo-main-menu-item">
           <nav class="main-menu menu-style1 d-none d-lg-block menu-left">
             <ul>
-              <li><a href="#">{{ __('Главная') }}</a></li>
+              <li><a href="{{ url('/') }}">{{ __('Главная') }}</a></li>
               <li class="menu-item-has-children">
                 <a href="#">{{ __('О компании') }}</a>
                 <ul class="sub-menu">
-                  <li><a href="#">{{ __('Компания') }}</a></li>
+                  <li><a href="{{ route('our.team') }}">{{ __('Наша команда') }}</a></li>
                   <li><a href="#">{{ __('Персонал') }}</a></li>
                 </ul>
               </li>
