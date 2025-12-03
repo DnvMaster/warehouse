@@ -11,6 +11,7 @@ use App\Http\Controllers\Backend\UsabilityController;
 use App\Http\Controllers\Backend\FaqController;
 use App\Http\Controllers\Backend\AppController;
 use App\Http\Controllers\FrontendController;
+use App\Http\Controllers\Backend\TeamController;
 
 Route::get('/', function () {
     return view('home.index');
@@ -102,6 +103,16 @@ Route::middleware('auth')->group(function()
     {
         Route::post('/update-app/{id}','updateApps');
         Route::post('/update-app-image/{id}','updateAppsImage');
+    });
+
+    Route::controller(TeamController::class)->group(function()
+    {
+        Route::get('/all/team', 'allTeam')->name('all.team');
+        Route::get('/add/team', 'addTeam')->name('add.team');
+        Route::post('/store/team', 'storeTeam')->name('store.team');
+        Route::get('/edit/team/{id}', 'editTeam')->name('edit.team');
+        Route::post('/update/team', 'updateTeam')->name('update.team');
+        Route::get('/delete/team/{id}', 'deleteTeam')->name('delete.team');
     });
 });
 

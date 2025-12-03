@@ -87,7 +87,20 @@
                 </ul>
             </div>
         </li>
-       <li>
+         <li>
+            <a href="#sidebarTeams" data-bs-toggle="collapse">
+                <i data-feather="alert-octagon"></i>
+                <span> {{ __('Клиенты') }}</span>
+                <span class="menu-arrow"></span>
+            </a>
+            <div class="collapse" id="sidebarTeams">
+                <ul class="nav-second-level">
+                    <li><a href="{{ route('all.team') }}" class="tp-link">{{ __('Все клиенты') }}</a></li>
+                    <li><a href="{{ route('add.team') }}" class="tp-link">{{ __('Добавить клиента') }}</a></li>
+                </ul>
+            </div>
+        </li>
+        <li>
             <a href="#sidebarFaq" data-bs-toggle="collapse">
                 <i data-feather="alert-octagon"></i>
                 <span> {{ __('Частые вопросы') }} </span>
@@ -97,7 +110,6 @@
                 <ul class="nav-second-level">
                     <li><a href="{{ route('all.faqs') }}" class="tp-link">{{ __('Все вопросы') }}</a></li>
                     <li><a href="{{ route('add.faqs') }}" class="tp-link">{{ __('Добавить вопрос') }}</a></li>
-                </ul>
                 </ul>
             </div>
         </li>
