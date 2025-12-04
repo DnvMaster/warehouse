@@ -17,7 +17,7 @@
                 <a href="#">{{ __('О компании') }}</a>
                 <ul class="sub-menu">
                   <li><a href="{{ route('our.team') }}">{{ __('Наша команда') }}</a></li>
-                  <li><a href="#">{{ __('Персонал') }}</a></li>
+                  <li><a href="{{ route('about.us') }}">{{ __('О нас') }}</a></li>
                 </ul>
               </li>
               <li><a href="">{{ __('Сервис') }}</a></li>

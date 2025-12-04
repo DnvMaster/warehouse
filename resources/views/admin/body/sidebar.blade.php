@@ -113,5 +113,17 @@
                 </ul>
             </div>
         </li>
+        <li>
+            <a href="#sidebarAbout" data-bs-toggle="collapse">
+                <i data-feather="alert-octagon"></i>
+                <span> {{ __('Страница о нас') }} </span>
+                <span class="menu-arrow"></span>
+            </a>
+            <div class="collapse" id="sidebarAbout">
+                <ul class="nav-second-level">
+                    <li><a href="{{ route('get.aboutus') }}" class="tp-link">{{ __('О нас') }}</a></li>
+                </ul>
+            </div>
+        </li>
     </ul>
 </div>

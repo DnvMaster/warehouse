@@ -12,6 +12,7 @@ use App\Http\Controllers\Backend\FaqController;
 use App\Http\Controllers\Backend\AppController;
 use App\Http\Controllers\FrontendController;
 use App\Http\Controllers\Backend\TeamController;
+use App\Http\Controllers\AboutController;
 
 Route::get('/', function () {
     return view('home.index');
@@ -114,6 +115,12 @@ Route::middleware('auth')->group(function()
         Route::post('/update/team', 'updateTeam')->name('update.team');
         Route::get('/delete/team/{id}', 'deleteTeam')->name('delete.team');
     });
+
+    Route::controller(AboutController::class)->group(function()
+    {
+        Route::get('/get/aboutus', 'getAboutus')->name('get.aboutus');
+    });
 });
 
-Route::get('/team',[FrontendController::class,'ourTeam'])->name('our.team');
+Route::get('/team', [FrontendController::class,'ourTeam'])->name('our.team');
+Route::get('/about', [AboutController::class, 'about'])->name('about.us');
