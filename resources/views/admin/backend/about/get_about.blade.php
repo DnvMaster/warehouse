@@ -27,21 +27,24 @@
                                             </div>
                                         </div>
                                     </div>
-                                    <form action="{{ route('update.slider') }}" method="post" enctype="multipart/form-data">
+                                    <form action="{{ route('update.about') }}" method="post" enctype="multipart/form-data">
                                         @csrf
                                         <input type="hidden" name="id" value="{{ $aboutus->id }}">
                                         <div class="card-body">
                                             <div class="form-group mb-3 row">
                                                 <label class="form-label"><b>{{ __('Заголовок') }}</b></label>
                                                 <div class="col-lg-12 col-xl-12">
-                                                    <input class="form-control" type="text" name="title" value="{{ $aboutus->title }}">
+                                                    <input class="form-control" name="title" type="text" value="{{ $aboutus->title }}">
                                                 </div>
                                             </div>
                                             
                                             <div class="form-group mb-3 row">
                                                 <label class="form-label"><b>{{ __('Описание текст') }}</b></label>
                                                 <div class="col-lg-12 col-xl-12">
-                                                    <textarea name="description" class="form-control">{{ $aboutus->description }}</textarea>    
+                                                    <textarea name="description" id="description" style="display: none;"></textarea>
+                                                    <div id="quill-editor" style="height: 200px;">
+                                                        {!! $aboutus->description !!}
+                                                    </div>
                                                 </div>
                                             </div>
                                              <div class="form-group mb-3 row">
@@ -69,6 +72,14 @@
             </div>
         </div>
     </div>
+
+    <script>
+        document.querySelector('form').onsubmit = function() {
+            var description = document.querySelector('#description');
+            description.value = quill.root.innerHTML;
+        }
+    </script>
+
     <script type="text/javascript">
     $(document).ready(function(){
         $('#image').change(function(e){

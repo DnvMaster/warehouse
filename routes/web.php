@@ -119,6 +119,7 @@ Route::middleware('auth')->group(function()
     Route::controller(AboutController::class)->group(function()
     {
         Route::get('/get/aboutus', 'getAboutus')->name('get.aboutus');
+        Route::post('/update/about', 'updateAbout')->name('update.about');
     });
 });
 

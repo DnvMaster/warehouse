@@ -6,8 +6,10 @@
         <meta name="csrf-token" content="{{ csrf_token() }}">
         <meta name="viewport" content="">
         <meta name="description" content="">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <link rel="shortcut icon" href="{{ asset('backend/images/favicon.ico') }}">
+        <link href="{{ asset('backend/libs/quill/quill.core.js')}}" rel="stylesheet">
+        <link href="{{ asset('backend/libs/quill/quill.snow.css')}}" rel="stylesheet">
+        <link href="{{ asset('backend/libs/quill/quill.bubble.css')}}" rel="stylesheet">
         <link href="{{ asset('backend/libs/datatables.net-bs5/css/dataTables.bootstrap5.min.css') }}" rel="stylesheet" type="text/css" />
         <link href="{{ asset('backend/libs/datatables.net-buttons-bs5/css/buttons.bootstrap5.min.css') }}" rel="stylesheet" type="text/css" />
         <link href="{{ asset('backend/libs/datatables.net-keytable-bs5/css/keyTable.bootstrap5.min.css') }}" rel="stylesheet" type="text/css" />
@@ -56,6 +58,9 @@
         <script src="{{ asset('backend/libs/datatables.net-bs5/js/dataTables.bootstrap5.min.js') }}"></script>
         <script src="{{ asset('backend/libs/datatables.net-buttons/js/dataTables.buttons.min.js') }}"></script>
         <script src="{{ asset('backend/js/pages/datatable.init.js') }}"></script>
+        <script src="{{ asset('backend/libs/quill/quill.core.js') }}"></script>
+        <script src="{{ asset('backend/libs/quill/quill.min.js') }}"></script>
+        <script src="{{ asset('backend/js/pages/quilljs.init.js') }}"></script>
         <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
         <script src="{{ asset('backend/js/code.js') }}"></script>
         <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>
