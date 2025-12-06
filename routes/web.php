@@ -14,6 +14,7 @@ use App\Http\Controllers\FrontendController;
 use App\Http\Controllers\Backend\TeamController;
 use App\Http\Controllers\AboutController;
 use App\Http\Controllers\Backend\BlogController;
+use App\Http\Controllers\BlogPostController;
 
 Route::get('/', function () {
     return view('home.index');
@@ -55,7 +56,6 @@ Route::middleware('auth')->group(function()
         Route::post('/update/review', 'updateReview')->name('update.review');
         Route::get('/delete/review/{id}', 'deleteReview')->name('delete.review');
     });
-
     Route::controller(SliderController::class)->group(function() 
     {
         Route::get('/get/slider', 'getSlider')->name('get.slider');
@@ -65,7 +65,6 @@ Route::middleware('auth')->group(function()
         Route::post('/edit/reviews/{id}', 'editReviews');
         Route::post('/edit/answers/{id}', 'editAnswers');
     });
-
     Route::controller(HomeController::class)->group(function()
     {
         Route::get('/all/feature', 'allFeature')->name('all.feature');
@@ -75,13 +74,11 @@ Route::middleware('auth')->group(function()
         Route::post('/update/feature', 'UpdateFeature')->name('update.feature');
         Route::get('/delete/feature/{id}', 'deleteFeature')->name('delete.feature');
     });
-
     Route::controller(ClarifiesController::class)->group(function()
     {
         Route::get('/all/clarifies', 'allClarifies')->name('all.clarifies');
         Route::post('/update/clarifies', 'updateClarifies')->name('update.clarifies');
     });
-
     Route::controller(UsabilityController::class)->group(function() 
     {
         Route::get('/get/usability', 'getUsability')->name('get.usability');
@@ -90,7 +87,6 @@ Route::middleware('auth')->group(function()
         Route::get('/add/connect', 'addConnect')->name('add.connect');
         Route::post('/store/connect', 'storeConnect')->name('store.connect');
     });
-
     Route::controller(FaqController::class)->group(function() 
     {
         Route::get('/all/faqs','allFaqs')->name('all.faqs');
@@ -100,13 +96,11 @@ Route::middleware('auth')->group(function()
         Route::post('/update/faqs', 'updateFaqs')->name('update.faqs');
         Route::get('/delete/faqs/{id}', 'deleteFaqs')->name('delete.faqs');
     });
-
     Route::controller(AppController::class)->group(function()
     {
         Route::post('/update-app/{id}','updateApps');
         Route::post('/update-app-image/{id}','updateAppsImage');
     });
-
     Route::controller(TeamController::class)->group(function()
     {
         Route::get('/all/team', 'allTeam')->name('all.team');
@@ -116,13 +110,11 @@ Route::middleware('auth')->group(function()
         Route::post('/update/team', 'updateTeam')->name('update.team');
         Route::get('/delete/team/{id}', 'deleteTeam')->name('delete.team');
     });
-
     Route::controller(AboutController::class)->group(function()
     {
         Route::get('/get/aboutus', 'getAboutus')->name('get.aboutus');
         Route::post('/update/about', 'updateAbout')->name('update.about');
     });
-
     Route::controller(BlogController::class)->group(function()
     {
         Route::get('/blog/category', 'blogCategory')->name('all.blog.category');
@@ -130,6 +122,11 @@ Route::middleware('auth')->group(function()
         Route::get('/edit/blog/category/{id}', 'editBlogCategory')->name('edit.blog.category');
         Route::post('/update/blog/category', 'updateBlogCategory')->name('update.blog.category');
         Route::get('/delete/blog/category/{id}', 'deleteBlogCategory')->name('delete.blog.category');    
+    });
+    Route::controller(BlogPostController::class)->group(function()
+    {
+        Route::get('/all/blog/post', 'allBlogPost')->name('all.blog.post');
+        Route::get('/add/blog/post', 'addBlogPost')->name('add.blog.post');
     });
 });
 

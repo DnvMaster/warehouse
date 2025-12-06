@@ -137,5 +137,18 @@
                 </ul>
             </div>
         </li>
+        <li>
+            <a href="#sidebarBlogPost" data-bs-toggle="collapse">
+                <i data-feather="alert-octagon"></i>
+                <span> {{ __('Блог / Пост') }} </span>
+                <span class="menu-arrow"></span>
+            </a>
+            <div class="collapse" id="sidebarBlogPost">
+                <ul class="nav-second-level">
+                    <li><a href="{{ route('all.blog.post') }}" class="tp-link">{{ __('Все посты') }}</a></li>
+                    <li><a href="{{ route('all.blog.post') }}" class="tp-link">{{ __('Добавить пост') }}</a></li>
+                </ul>
+            </div>
+        </li>
     </ul>
 </div>
