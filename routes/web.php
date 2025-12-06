@@ -126,6 +126,10 @@ Route::middleware('auth')->group(function()
     Route::controller(BlogController::class)->group(function()
     {
         Route::get('/blog/category', 'blogCategory')->name('all.blog.category');
+        Route::post('/store/blog/category', 'storeBlogCategory')->name('store.blog.category');
+        Route::get('/edit/blog/category/{id}', 'editBlogCategory')->name('edit.blog.category');
+        Route::post('/update/blog/category', 'updateBlogCategory')->name('update.blog.category');
+        Route::get('/delete/blog/category/{id}', 'deleteBlogCategory')->name('delete.blog.category');    
     });
 });
 
