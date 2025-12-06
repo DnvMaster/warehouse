@@ -125,5 +125,17 @@
                 </ul>
             </div>
         </li>
+         <li>
+            <a href="#sidebarCategoryBlog" data-bs-toggle="collapse">
+                <i data-feather="alert-octagon"></i>
+                <span> {{ __('Блог / Категории') }} </span>
+                <span class="menu-arrow"></span>
+            </a>
+            <div class="collapse" id="sidebarCategoryBlog">
+                <ul class="nav-second-level">
+                    <li><a href="{{ route('all.blog.category') }}" class="tp-link">{{ __('Категория Блога') }}</a></li>
+                </ul>
+            </div>
+        </li>
     </ul>
 </div>

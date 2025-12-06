@@ -13,6 +13,7 @@ use App\Http\Controllers\Backend\AppController;
 use App\Http\Controllers\FrontendController;
 use App\Http\Controllers\Backend\TeamController;
 use App\Http\Controllers\AboutController;
+use App\Http\Controllers\Backend\BlogController;
 
 Route::get('/', function () {
     return view('home.index');
@@ -120,6 +121,11 @@ Route::middleware('auth')->group(function()
     {
         Route::get('/get/aboutus', 'getAboutus')->name('get.aboutus');
         Route::post('/update/about', 'updateAbout')->name('update.about');
+    });
+
+    Route::controller(BlogController::class)->group(function()
+    {
+        Route::get('/blog/category', 'blogCategory')->name('all.blog.category');
     });
 });
 
