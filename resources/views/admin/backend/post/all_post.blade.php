@@ -23,7 +23,7 @@
 
                     <div class="card-body">
                         <div class="table-responsive">
-                            <table class="table table-bordered border-primary mb-0">
+                            <table class="table table-borderless table-striped table-hover border-primary mb-0">
                                 <thead>
                                     <tr>
                                         <th>№</th>
@@ -41,7 +41,7 @@
                                         <td>{{ $post->category->category_name }}</td>
                                         <td>{{ $post->post_title }}</td>
                                         <td><img src="{{ asset($post->image) }}" style="width: 70px; height: 40px;" alt="{{ $post->name }}"></td>
-                                        <td>{!! Str::limit($post->long_description, 50, '...') !!}</td>
+                                        <td>{!! Str::limit($post->long_description, 80, '...') !!}</td>
                                         <td>
                                             <a href="{{ route('edit.blog.post',$post->id) }}"><span class="mdi mdi-file-edit-outline" style="font-size: 26px; color:green;"></span></a>&nbsp;&nbsp;
                                             <a href="{{ route('delete.blog.post', $post->id) }}" id="delete"><span class="mdi mdi-delete-empty-outline" style="font-size: 26px; color:red;"></span></a>

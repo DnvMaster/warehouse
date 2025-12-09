@@ -5,12 +5,20 @@ namespace App\Http\Controllers\Backend;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Models\BlogCategory;
+use App\Models\BlogPost;
 use Intervention\Image\ImageManager;
 use Intervention\Image\Drivers\Gd\Driver;
 use SebastianBergmann\CodeCoverage\Report\PHP;
 
 class BlogController extends Controller
 {
+    public function blogPage()
+    {
+        $blog_category = BlogCategory::latest()->withCount('posts')->get();
+        $blog_post = BlogPost::latest()->limit(5)->get();
+        return view('home.blog.list_blog', compact('blog_category', 'blog_post'));
+    }
+
     public function blogCategory()
     {
         $blogCategory = BlogCategory::latest()->get();

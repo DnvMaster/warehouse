@@ -17,12 +17,10 @@
                 <a href="#">{{ __('О компании') }}</a>
                 <ul class="sub-menu">
                   <li><a href="{{ route('our.team') }}">{{ __('Наша команда') }}</a></li>
-                  <li><a href="{{ route('about.us') }}">{{ __('О нас') }}</a></li>
                 </ul>
               </li>
-              <li><a href="">{{ __('Сервис') }}</a></li>
-              <li><a href="">{{ __('Портфолио') }}</a></li>
-              <li><a href="">{{ __('Блог') }}</a></li>
+              <li><a href="{{ route('about.us') }}">{{ __('О нас') }}</a></li>
+              <li><a href="{{ route('blog.page') }}">{{ __('Блог') }}</a></li>
               <li><a href="">{{ __('Контакты') }}</a></li>
             </ul>
           </nav>

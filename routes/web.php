@@ -136,3 +136,4 @@ Route::middleware('auth')->group(function()
 
 Route::get('/team', [FrontendController::class,'ourTeam'])->name('our.team');
 Route::get('/about', [AboutController::class, 'about'])->name('about.us');
+Route::get('/blog', [BlogController::class, 'blogPage'])->name('blog.page');
