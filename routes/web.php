@@ -128,6 +128,9 @@ Route::middleware('auth')->group(function()
         Route::get('/all/blog/post', 'allBlogPost')->name('all.blog.post');
         Route::get('/add/blog/post', 'addBlogPost')->name('add.blog.post');
         Route::post('/store/blog/post','storeBlogPost')->name('store.blog.post');
+        Route::get('/edit/blog/post/{id}', 'editBlogPost')->name('edit.blog.post');
+        Route::post('/update/blog/post', 'updateBlogPost')->name('update.blog.post');
+        Route::get('/delete/post/blog/{id}','deleteBlogPost')->name('delete.blog.post');
     });
 });
 

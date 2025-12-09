@@ -43,7 +43,7 @@
                                         <td><img src="{{ asset($post->image) }}" style="width: 70px; height: 40px;" alt="{{ $post->name }}"></td>
                                         <td>{!! Str::limit($post->long_description, 50, '...') !!}</td>
                                         <td>
-                                            <a href="{--{ route('edit.blog.post',$post->id) }--}"><span class="mdi mdi-file-edit-outline" style="font-size: 26px; color:green;"></span></a>&nbsp;&nbsp;
+                                            <a href="{{ route('edit.blog.post',$post->id) }}"><span class="mdi mdi-file-edit-outline" style="font-size: 26px; color:green;"></span></a>&nbsp;&nbsp;
                                             <a href="{--{ route('delete.blog.post', $post->id) }--}" id="delete"><span class="mdi mdi-delete-empty-outline" style="font-size: 26px; color:red;"></span></a>
                                         </td>
                                     </tr>
