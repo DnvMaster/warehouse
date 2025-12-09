@@ -54,7 +54,7 @@ class BlogPostController extends Controller
     }
 
     public function updateBlogPost(Request $request)
-   {
+    {
         $blog_edit_id = $request->id;
         if ($request->file('image')) {
             $image = $request->file('image');
@@ -90,5 +90,18 @@ class BlogPostController extends Controller
     
             return redirect()->route('all.blog.post')->with($notification);  
         }
+    }
+
+    public function deleteBlogPost($id)
+    {
+        $delete = BlogPost::find($id);
+        $img = $delete->image;
+        unlink($img);
+        BlogPost::find($id)->delete();
+        $notification = array(
+            'message' => 'Данные поста успешно удалены',
+            'alert-type' => 'success',
+        );
+        return redirect()->back()->with($notification);
     }
 }

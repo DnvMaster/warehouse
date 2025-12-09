@@ -73,7 +73,7 @@
                                                 </div>
                                             </div>
                                             <button type="submit" class="btn btn-primary">
-                                                <span class="mdi mdi-file-edit-outline"></span>&nbsp;{{ __('Создать') }}
+                                                <span class="mdi mdi-file-edit-outline"></span>&nbsp;{{ __('Сохранить') }}
                                             </button>
                                         </div>
                                     </form>
