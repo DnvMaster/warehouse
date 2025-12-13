@@ -21,7 +21,7 @@
               </li>
               <li><a href="{{ route('about.us') }}">{{ __('О нас') }}</a></li>
               <li><a href="{{ route('blog.page') }}">{{ __('Блог') }}</a></li>
-              <li><a href="">{{ __('Контакты') }}</a></li>
+              <li><a href="{{ route('contact.us') }}">{{ __('Контакты') }}</a></li>
             </ul>
           </nav>
         </div>

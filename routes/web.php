@@ -15,6 +15,7 @@ use App\Http\Controllers\Backend\TeamController;
 use App\Http\Controllers\AboutController;
 use App\Http\Controllers\Backend\BlogController;
 use App\Http\Controllers\BlogPostController;
+use App\Http\Controllers\ContactController;
 
 Route::get('/', function () {
     return view('home.index');
@@ -137,3 +138,4 @@ Route::middleware('auth')->group(function()
 Route::get('/team', [FrontendController::class,'ourTeam'])->name('our.team');
 Route::get('/about', [AboutController::class, 'about'])->name('about.us');
 Route::get('/blog', [BlogController::class, 'blogPage'])->name('blog.page');
+Route::get('/contact', [ContactController::class, 'contactUs'])->name('contact.us');
