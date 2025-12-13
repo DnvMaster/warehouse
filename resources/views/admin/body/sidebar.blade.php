@@ -150,5 +150,17 @@
                 </ul>
             </div>
         </li>
+        <li>
+            <a href="#sidebarFormContact" data-bs-toggle="collapse">
+                <i data-feather="alert-octagon"></i>
+                <span> {{ __('Контакты') }} </span>
+                <span class="menu-arrow"></span>
+            </a>
+            <div class="collapse" id="sidebarFormContact">
+                <ul class="nav-second-level">
+                    <li><a href="{{ route('contact.all.message') }}" class="tp-link">{{ __('Все сообщения') }}</a></li>
+                </ul>
+            </div>
+        </li>
     </ul>
 </div>

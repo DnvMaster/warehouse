@@ -140,3 +140,5 @@ Route::get('/about', [AboutController::class, 'about'])->name('about.us');
 Route::get('/blog', [BlogController::class, 'blogPage'])->name('blog.page');
 Route::get('/contact', [ContactController::class, 'contactUs'])->name('contact.us');
 Route::post('/contact/message', [ContactController::class, 'contactMessage'])->name('contact.message');
+Route::get('/contact/all/message', [ContactController::class, 'contactAllMessage'])->name('contact.all.message');
+Route::get('/contact/message/delete/{id}', [ContactController::class, 'contactMessageDelete'])->name('delete.contact.message');
