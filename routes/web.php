@@ -139,3 +139,4 @@ Route::get('/team', [FrontendController::class,'ourTeam'])->name('our.team');
 Route::get('/about', [AboutController::class, 'about'])->name('about.us');
 Route::get('/blog', [BlogController::class, 'blogPage'])->name('blog.page');
 Route::get('/contact', [ContactController::class, 'contactUs'])->name('contact.us');
+Route::post('/contact/message', [ContactController::class, 'contactMessage'])->name('contact.message');

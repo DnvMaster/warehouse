@@ -75,23 +75,23 @@
                 <div class="col-lg-5">
                     <div class="lonyo-contact-box box2" data-aos="fade-up" data-aos-duration="700">
                         <h4>{{ __('Заполните форму ниже') }}</h4>
-                        <form action="#">
+                        <form action="{{ route('contact.message') }}" method="post">
                             @csrf
                             <div class="lonyo-main-field">
                                 <p>{{ __('Полное имя') }} *</p>
-                                <input type="text" placeholder="{{ __('Введите своё имя') }}">
+                                <input type="text" name="name" placeholder="{{ __('Введите своё имя') }}">
                             </div>
                             <div class="lonyo-main-field">
                                 <p>{{ __('Электронный адрес') }} *</p>
-                                <input type="email" placeholder="{{ __('Введите свой электронный адрес') }}">
+                                <input type="email" name="email" placeholder="{{ __('Введите свой электронный адрес') }}">
                             </div>
 
                             <p>{{ __('Ваше сообщение') }}</p>
 
                             <div class="lonyo-main-field-textarea">
-                                <textarea class="button-text" name="textarea" placeholder="{{ __('Напишите своё сообщение') }}"></textarea>
+                                <textarea class="button-text" name="message" placeholder="{{ __('Напишите своё сообщение') }}"></textarea>
                             </div>
-                            <button class="lonyo-default-btn extra-btn d-block" type="button">{{ __('Отправить сообщение') }}</button>
+                            <button class="lonyo-default-btn extra-btn d-block" type="submit">{{ __('Отправить сообщение') }}</button>
                         </form>
                     </div>
                 </div>

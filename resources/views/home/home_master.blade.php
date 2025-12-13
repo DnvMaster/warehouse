@@ -19,6 +19,7 @@
       <link rel="stylesheet" href="{{ asset('frontend/css/animate.min.css') }}">
       <link rel="stylesheet" href="{{ asset('frontend/css/main.css') }}">
       <link rel="stylesheet" href="{{ asset('frontend/css/app.min.css') }}">
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.css">
     </head>
     <body>
       <div class="preloader">
@@ -73,6 +74,26 @@
     <script src="{{ asset('frontend/js/niceselect.js') }}"></script>
     <script src="{{ asset('frontend/js/wow.min.js') }}"></script>
     <script src="{{ asset('frontend/js/slick.js') }}"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>
+    <script>
+      @if(Session::has('message'))
+        var type = "{{ Session::get('alert-type','info') }}"
+        switch(type) {
+            case 'info':
+              toastr.info("{{ Session::get('message') }}");
+            break;
+            case 'success':
+              toastr.success("{{ Session::get('message') }}");
+            break;
+            case 'warning':
+              toastr.warning("{{ Session::get('message') }}");
+            break;
+            case 'error':
+              toastr.error("{{ Session::get('message') }}");
+            break;
+        }
+      @endif
+    </script>
     <script src="{{ asset('frontend/js/app.js')}}"></script>
   </body>
 </html>
